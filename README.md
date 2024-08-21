@@ -1,5 +1,4 @@
-
-# Web Scraping de Quotes to Scrape 
+# Web Scraping y Almacenamiento en Base de Datos
 
 ## Descripción
 
@@ -8,7 +7,6 @@ Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](ht
 ## Archivos del Proyecto
 
 - **main.py**: Archivo principal que coordina el flujo completo del proceso. Comprueba si la base de datos existe, y si no, la crea. Luego, realiza el scraping de las citas y almacena los datos en la base de datos.
-  
 - **create_db.py**: Script que define y crea la estructura de la base de datos (tablas de autores, citas, etiquetas, y relaciones entre ellas).
 
 - **db.py**: Contiene las funciones necesarias para interactuar con la base de datos, incluyendo la creación de la conexión, inserción de autores, citas, etiquetas, y la asociación de citas con etiquetas.
@@ -17,8 +15,8 @@ Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](ht
 
 - **get_quotes.py**: Script para consultar y mostrar las citas de un autor específico desde la base de datos. Solicita al usuario el nombre del autor (con la opción de usar un valor predeterminado) y muestra todas las citas asociadas al mismo.
 
-
 ## Esquema de la base de datos
+
 ![Esquema de la Base de Datos](./schema.png)
 
 ## Requisitos
@@ -31,8 +29,8 @@ Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](ht
 
 ## Instrucciones de ejecución
 
-
 1. **Configurar entorno virtual**:
+
    - En macOS/Linux:
      ```bash
      python3 -m venv venv
@@ -45,17 +43,20 @@ Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](ht
      ```
 
 2. **Instalar las dependencias**:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Ejecutar scraping**:
+
    ```bash
    cd src
    python main.py
    ```
 
 4. **Obtener citas por autor**:
+
    ```bash
    python get_quotes.py
    ```
@@ -64,7 +65,6 @@ Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](ht
    ```bash
    deactivate
    ```
-
 
 ## Autor
 
