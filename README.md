@@ -1,71 +1,68 @@
-# Web Scraping y Almacenamiento en Base de Datos
+# Web Scraping and Database Storage
 
-## Descripción
+## Description
 
-Este proyecto realiza scraping de citas desde el sitio web [Quotes to Scrape](https://quotes.toscrape.com) y almacena la información extraída en una base de datos SQLite. El script navega a través de todas las páginas del sitio, extrae citas, autores y etiquetas, y guarda estos datos en una base de datos relacional con las tablas correspondientes.
+This project performs scraping of quotes from the website [Quotes to Scrape](https://quotes.toscrape.com) and stores the extracted information in a SQLite database. The script navigates through all pages of the site, extracts quotes, authors, and tags, and saves this data in a relational database with the corresponding tables.
 
-## Archivos del Proyecto
+## Project Files
 
-- **main.py**: Archivo principal que coordina el flujo completo del proceso. Comprueba si la base de datos existe, y si no, la crea. Luego, realiza el scraping de las citas y almacena los datos en la base de datos.
-- **create_db.py**: Script que define y crea la estructura de la base de datos (tablas de autores, citas, etiquetas, y relaciones entre ellas).
+- **main.py**: Main file that coordinates the complete process flow. It checks if the database exists, and if not, creates it. Then, it performs the scraping of quotes and stores the data in the database.
 
-- **db.py**: Contiene las funciones necesarias para interactuar con la base de datos, incluyendo la creación de la conexión, inserción de autores, citas, etiquetas, y la asociación de citas con etiquetas.
+- **create_db.py**: Script that defines and creates the database structure (tables for authors, quotes, tags, and relationships between them).
 
-- **scraper.py**: Se encarga de realizar el scraping de la página web. Navega a través de todas las páginas disponibles, extrae la información necesaria (citas, autores, etiquetas), y la organiza para ser almacenada. Incluye un manejo de errores HTTP comunes y evita sobrecargar el servidor mediante pausas aleatorias entre solicitudes.
+- **db.py**: Contains the necessary functions to interact with the database, including creating the connection, inserting authors, quotes, tags, and associating quotes with tags.
 
-- **get_quotes.py**: Script para consultar y mostrar las citas de un autor específico desde la base de datos. Solicita al usuario el nombre del autor (con la opción de usar un valor predeterminado) y muestra todas las citas asociadas al mismo.
+- **scraper.py**: Responsible for performing the web scraping. It navigates through all available pages, extracts the necessary information (quotes, authors, tags), and organizes it for storage. Includes handling of common HTTP errors and avoids overloading the server through random pauses between requests.
 
-## Esquema de la base de datos
+- **get_quotes.py**: Script to query and display quotes from a specific author from the database. It prompts the user for the author's name (with the option to use a default value) and displays all quotes associated with that author.
 
-![Esquema de la Base de Datos](./schema.png)
+## Database Schema
 
-## Requisitos
+![Database Schema](./schema.png)
+
+## Requirements
 
 - Python 3.11+
-- Bibliotecas de Python:
-  - `requests`
-  - `BeautifulSoup4`
-  - `sqlite3` (incluida por defecto en Python)
 
-## Instrucciones de ejecución
+## Execution Instructions
 
-1. **Configurar entorno virtual**:
+1. **Set up virtual environment**:
 
-   - En macOS/Linux:
+   - On macOS/Linux:
      ```bash
      python3 -m venv venv
      source venv/bin/activate
      ```
-   - En Windows:
+   - On Windows:
      ```bash
      python -m venv venv
      .\venv\Scripts\activate
      ```
 
-2. **Instalar las dependencias**:
+2. **Install dependencies**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Ejecutar scraping**:
+3. **Run scraping**:
 
    ```bash
    cd src
    python main.py
    ```
 
-4. **Obtener citas por autor**:
+4. **Get quotes by author**:
 
    ```bash
    python get_quotes.py
    ```
 
-5. **Desactivar entorno virtual** (opcional):
+5. **Deactivate virtual environment** (optional):
    ```bash
    deactivate
    ```
 
-## Autor
+## Author
 
 [Juan De Luca](https://github.com/delucajuan/)
